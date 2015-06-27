@@ -1,0 +1,41 @@
+{
+  "name": "react-bootstrap-breadcrumbs",
+  "version": "0.0.1",
+  "description": "Breadcrumbs for React-Router and Bootstrap",
+  "main": "lib/Breadcrumbs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/babel/bin/babel/index.js src --out-dir lib",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexkuz/react-bootstrap-breadcrumbs.git"
+  },
+  "keywords": [
+    "react",
+    "react-router",
+    "bootstrap",
+    "breadcrumbs"
+  ],
+  "author": "Alexander <alexkuz@gmail.com> (http://kuzya.org/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexkuz/react-bootstrap-breadcrumbs/issues"
+  },
+  "homepage": "https://github.com/alexkuz/react-bootstrap-breadcrumbs#readme",
+  "peerDependencies": {
+    "react": "^0.13.x",
+    "react-router": "^0.13.x"
+  },
+  "devDependencies": {
+    "babel": "^5.6.14",
+    "babel-eslint": "^3.1.19",
+    "babel-runtime": "^5.6.15",
+    "eslint": "^0.24.0",
+    "eslint-plugin-react": "^2.5.2"
+  },
+  "dependencies": {
+    "react-bootstrap": "^0.23.5"
+  }
+}
