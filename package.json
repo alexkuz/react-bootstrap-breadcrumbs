@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-breadcrumbs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Breadcrumbs for React-Router and Bootstrap",
   "main": "lib/Breadcrumbs.js",
   "scripts": {
@@ -26,7 +26,8 @@
   "homepage": "https://github.com/alexkuz/react-bootstrap-breadcrumbs#readme",
   "peerDependencies": {
     "react": "^0.13.x",
-    "react-router": "^0.13.x"
+    "react-router": "^0.13.x",
+    "react-bootstrap": "^0.23.5"
   },
   "devDependencies": {
     "babel": "^5.6.14",
@@ -34,8 +35,5 @@
     "babel-runtime": "^5.6.15",
     "eslint": "^0.24.0",
     "eslint-plugin-react": "^2.5.2"
-  },
-  "dependencies": {
-    "react-bootstrap": "^0.23.5"
   }
 }
