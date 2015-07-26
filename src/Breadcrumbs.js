@@ -3,15 +3,19 @@
 
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+import { getRouteParams } from 'react-router/lib/RoutingUtils';
 
 function getBreadcrumbs(router, getTitle) {
-  const routes = router.getCurrentRoutes();
-  const params = router.getCurrentParams();
+  const routes = router.state.branch;
+  let path = '';
 
   const breadcrumbs = routes.map(route => {
+    const params = getRouteParams(route, router.state.params);
     let name = route.name ||
-               route.handler.displayName ||
-               route.handler.name;
+               route.component && (
+                 route.component.displayName ||
+                 route.component.name
+               );
 
     if (getTitle) {
       const title = getTitle(name, route, params);
@@ -19,9 +23,17 @@ function getBreadcrumbs(router, getTitle) {
         name = title;
       }
     }
+    
+    if (route.path) {
+      if (route.path.indexOf('/') === 0) {
+        path = route.path;
+      } else {
+        path += '/' + route.path;
+      }
+    }
 
     return {
-      to: route.name || '/',
+      to: path,
       params,
       name
     };
@@ -38,7 +50,7 @@ export default class Breadcrumbs extends Component {
   }
 
   static contextTypes = {
-    router: PropTypes.func.isRequired
+    router: PropTypes.object.isRequired
   }
 
   render() {

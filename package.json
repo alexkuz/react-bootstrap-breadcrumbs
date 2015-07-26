@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-breadcrumbs",
-  "version": "0.0.2",
+  "version": "0.0.2-beta",
   "description": "Breadcrumbs for React-Router and Bootstrap",
   "main": "lib/Breadcrumbs.js",
   "scripts": {
@@ -26,7 +26,7 @@
   "homepage": "https://github.com/alexkuz/react-bootstrap-breadcrumbs#readme",
   "peerDependencies": {
     "react": "^0.13.x",
-    "react-router": "^0.13.x",
+    "react-router": "^1.0.0-beta3",
     "react-bootstrap": "^0.23.5"
   },
   "devDependencies": {
