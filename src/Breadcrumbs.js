@@ -5,12 +5,11 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import getRouteParams from 'react-router/lib/getRouteParams';
 
-function getBreadcrumbs(router, getTitle) {
-  const routes = router.state.branch;
+function getBreadcrumbs(routes, routerParams, getTitle) {
   let path = '';
 
   const breadcrumbs = routes.map(route => {
-    const params = getRouteParams(route, router.state.params);
+    const params = getRouteParams(route, routerParams);
     let name = route.name ||
                route.component && (
                  route.component.displayName ||
@@ -46,17 +45,14 @@ function getBreadcrumbs(router, getTitle) {
 export default class Breadcrumbs extends Component {
   static propTypes = {
     getTitle: PropTypes.func,
-    className: PropTypes.string
-  }
-
-  static contextTypes = {
-    router: PropTypes.object.isRequired
+    className: PropTypes.string,
+    routes: PropTypes.array.isRequired,
+    params: PropTypes.object
   }
 
   render() {
-    const { router } = this.context;
-    const { getTitle, className } = this.props;
-    const breadcrumbs = getBreadcrumbs(router, getTitle);
+    const { getTitle, className, routes, params } = this.props;
+    const breadcrumbs = getBreadcrumbs(routes, params, getTitle);
   
     return (
       <ol className={className ? `breadcrumb ${className}` : 'breadcrumb'}>
