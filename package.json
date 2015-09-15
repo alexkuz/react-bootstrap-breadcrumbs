@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-breadcrumbs",
-  "version": "0.0.2-beta3",
+  "version": "0.0.2-beta4",
   "description": "Breadcrumbs for React-Router and Bootstrap",
   "main": "lib/Breadcrumbs.js",
   "scripts": {
