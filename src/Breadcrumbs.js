@@ -3,7 +3,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import { getRouteParams } from 'react-router/lib/RoutingUtils';
+import getRouteParams from 'react-router/lib/getRouteParams';
 
 function getBreadcrumbs(router, getTitle) {
   const routes = router.state.branch;
