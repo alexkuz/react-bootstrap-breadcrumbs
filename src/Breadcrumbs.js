@@ -4,12 +4,14 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import getRouteParams from 'react-router/lib/getRouteParams';
+import { formatPattern } from 'react-router/lib/PatternUtils';
 
 function getBreadcrumbs(routes, routerParams, getTitle) {
   let path = '';
+  let params = {};
 
   const breadcrumbs = routes.map(route => {
-    const params = getRouteParams(route, routerParams);
+    params = { ...params, ...getRouteParams(route, routerParams) };
     let name = route.name ||
                route.component && (
                  route.component.displayName ||
@@ -61,8 +63,7 @@ export default class Breadcrumbs extends Component {
               key={`breadcrumb-${idx}`}>
             {breadcrumb.isActive ?
               breadcrumb.name || '...' :
-              <Link to={breadcrumb.to}
-                    params={breadcrumb.params}>
+              <Link to={formatPattern(breadcrumb.to, breadcrumb.params)}>
                 {breadcrumb.name}
               </Link>
             }
