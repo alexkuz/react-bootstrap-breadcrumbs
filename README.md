@@ -12,8 +12,9 @@ npm i -S react-bootstrap-breadcrumbs
 
 ## Example
 ```
-<Route name='items' path='/items' handler={ItemsPage}>
-  <Route name='item' path=':itemId' handler={ItemPage} />
+<Route name='items' path='/items'>
+  <IndexRoute component={ItemsPage} />
+  <Route name='item' path=':itemId' component={ItemPage} />
 </Route>
 
 ...
