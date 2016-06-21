@@ -31,6 +31,8 @@ function getBreadcrumbs(routes, routerParams, getTitle) {
       } else {
         path += '/' + route.path;
       }
+    } else {
+      return false;
     }
 
     return {
